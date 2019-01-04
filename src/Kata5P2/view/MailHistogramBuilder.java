@@ -1,16 +1,18 @@
 
 package Kata5P2.view;
 
-import java.util.List;
 import Kata5P2.model.Histogram;
-import Kata5P2.model.Mail;
+import java.util.List;
 
 public class MailHistogramBuilder {
-    public static Histogram<String> build (List <Mail> lista){
-            Histogram<String> histogram = new Histogram <>();
-            for (Mail mail : lista) {
-                histogram.increment(mail.getDomain());            
-            }
-            return histogram;        
+
+    public MailHistogramBuilder(){}
+
+    public Histogram<String> build (List<String> mails){
+        Histogram<String> histogram = new Histogram();
+        for (String mail : mails) {
+            histogram.increment(mail);
+        }
+        return histogram;
     }
 }
